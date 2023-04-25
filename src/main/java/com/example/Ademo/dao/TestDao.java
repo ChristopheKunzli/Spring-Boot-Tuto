@@ -1,6 +1,7 @@
 package com.example.Ademo.dao;
 
 import com.example.Ademo.model.Person;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class TestDao implements PersonDao{
     private static final List<Person> DB = new ArrayList<>();
 
     @Override
-    public int insertPerson(UUID id, Person person) {
+    public int insertPerson(UUID id, @NotNull Person person) {
         DB.add(new Person(id, person.getName()));
         return 1;
     }
